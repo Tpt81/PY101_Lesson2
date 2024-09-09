@@ -50,8 +50,9 @@ while True:
     while True:
         prompt(messages('amount_prompt'))
         amount = input()
+        amount_clean = amount.replace(',', '').replace('$', '')
 
-        if not invalid_number(amount) and float(amount) > 0:
+        if not invalid_number(amount_clean) and float(amount_clean) > 0:
             break
 
         prompt(messages('invalid_amount'))
@@ -59,8 +60,9 @@ while True:
     while True:
         prompt(messages('apr_prompt'))
         annual_rate = input()
+        annual_rate_clean = annual_rate.replace('%', '')
 
-        if not invalid_number(annual_rate) and float(annual_rate) >= 0:
+        if not invalid_number(annual_rate_clean) and float(annual_rate_clean) >= 0:
             break
         prompt(messages('invalid_apr'))
 
@@ -73,12 +75,12 @@ while True:
         prompt(messages('invalid_duration'))
 
 
-    monthly_rate = float(annual_rate)/12/100
+    monthly_rate = float(annual_rate_clean)/12/100
 
     if float(monthly_rate) == 0:
-        monthly_payment = float(amount) / (float(duration_months))
+        monthly_payment = float(amount_clean) / (float(duration_months))
     else:
-        monthly_payment = float(amount) * (float(monthly_rate) / (1 - (1 + float(monthly_rate)) **
+        monthly_payment = float(amount_clean) * (float(monthly_rate) / (1 - (1 + float(monthly_rate)) **
                                                                   (-float(duration_months))))
 
     rounded_payment = round(float(monthly_payment), 2)
