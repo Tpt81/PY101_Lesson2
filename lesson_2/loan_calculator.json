@@ -1,0 +1,12 @@
+{
+    "welcome" : "Welcome to the Loan Calculator",
+    "amount_prompt" : "Enter the loan amount: ",
+    "invalid_amount" : "ERROR: Loan amount must be a number greater than zero.",
+    "apr_prompt" : "Enter the Annual Percentage Rate: \n  (Enter the rate as a percentage, not a decimal.  i.e. enter 5 for 5%, not .05)",
+    "invalid_apr" : "ERROR: APR must be a number greater than or equal to zero.",
+    "duration_prompt" : "Enter the loan duration in months:  ",
+    "invalid_duration" : "ERROR: Loan duration must be a number greater than zero.",
+    "result" : "Your monthly payment is ${rounded_payment}",
+    "another_calculation" : "Would you like to perform another calculation? (y/n)",
+    "another_calc_error" : "ERROR: Response must be either 'y' or 'n'"
+}
